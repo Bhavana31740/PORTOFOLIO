@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHAVANA K.C | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&family=Poppins:wght@200;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1dddbd;
+            --bgDark: #0c0c0c;
+            --white: #fafafa;
+            --secondary: #003b32;
+            --bgLight: #ebeef1;
+            --accent: #f59e42;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+        body {
+            font-family: 'Poppins', 'Lato', Arial, sans-serif;
+            background: var(--bgLight);
+            color: var(--secondary);
+        }
+        header {
+            background: linear-gradient(90deg, var(--bgDark) 70%, var(--primary) 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 73% 94%, 0 100%);
+            padding-bottom: 2rem;
+        }
+        .container {
+            max-width: 1152px;
+            padding: 0 15px;
+            margin: 0 auto;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem 0;
+        }
+        .left {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            margin-right: 2.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            width: 85px; /* Increased logo size */
+            height: 85px;
+            border-radius: 50%;
+            box-shadow: 0 4px 16px #0003;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            background: #fff;
+            transition: transform 0.2s;
+        }
+        .logo img:hover {
+            transform: scale(1.07) rotate(-4deg);
+            box-shadow: 0 8px 32px #1dddbd44;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem; /* Space between nav links */
+        }
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+            font-size: 1rem;
+            padding: 0.5rem 1.1rem;
+            border-radius: 22px;
+            position: relative;
+        }
+        .nav-links a:hover, .nav-links a:focus {
+            color: var(--primary);
+            background: #fff2;
+            box-shadow: 0 2px 8px #1dddbd22;
+        }
+        .nav-links a.active {
+            background: var(--primary);
+            color: var(--bgDark);
+            box-shadow: 0 2px 8px #1dddbd44;
+        }
+        .right .btn {
+            padding: 0.7rem 1.6rem;
+            border: none;
+            border-radius: 25px;
+            background: var(--primary);
+            color: var(--bgDark);
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 2px 8px #1dddbd33;
+            transition: background 0.2s, color 0.2s;
+        }
+        .right .btn:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 2rem;
+            padding-bottom: 3rem;
+            gap: 2rem;
+        }
+        .hero .left img {
+            width: 350px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px #1dddbd22;
+            background: #fff;
+        }
+        .hero .right {
+            color: var(--bgDark);
+            margin-top: 0;
+        }
+        .hero .right h6 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        .hero .right h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--bgDark);
+        }
+        .hero .right h1 span {
+            color: var(--primary);
+        }
+        .hero .right p {
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        .btn-secondary {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary) 70%, var(--accent) 100%);
+            color: var(--bgDark);
+            border: none;
+            border-radius: 25px;
+            padding: 0.8rem 2.4rem;
+            font-weight: bold;
+            font-size: 1.12rem;
+            cursor: pointer;
+            box-shadow: 0 4px 18px #1dddbd33;
+            transition: background 0.2s, color 0.2s, transform 0.18s, box-shadow 0.18s;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            text-align: center;
+            /* Remove download icon */
+        }
+        .btn-secondary:hover, .btn-secondary:focus {
+            background: linear-gradient(90deg, var(--accent) 60%, var(--primary) 100%);
+            color: #fff;
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 32px #f59e4233;
+            text-decoration: none;
+        }
+        section {
+            padding: 5rem 0;
+        }
+        .about {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 6px 36px #1dddbd11;
+            margin: 2.5rem 0;
+            padding: 3.5rem 0 2.5rem 0;
+            position: relative;
+        }
+        .about .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2.5rem;
+            max-width: 900px;
+        }
+        .about .right {
+            width: 100%;
+        }
+        .about .section-title {
+            color: var(--primary);
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+            text-align: left;
+            letter-spacing: 1.5px;
+        }
+        .about .section-desc {
+            color: var(--secondary);
+            font-size: 1.13rem;
+            margin-bottom: 2rem;
+            font-family: 'Lato', sans-serif;
+            line-height: 1.8;
+        }
+        .about-list {
+            color: var(--secondary);
+            font-size: 1.08rem;
+            line-height: 2;
+            margin-bottom: 2rem;
+            padding-left: 1.2rem;
+        }
+        .about-projects {
+            background: var(--bgLight);
+            border-radius: 12px;
+            box-shadow: 0 2px 12px #1dddbd11;
+            padding: 1.5rem 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        .about-projects h3 {
+            color: var(--primary);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+            letter-spacing: 0.5px;
+        }
+        .about-projects ul {
+            margin-left: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .about-projects li {
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+            font-size: 1.05rem;
+        }
+        .about-projects a {
+            color: var(--accent);
+            text-decoration: underline;
+            font-size: 0.98rem;
+            transition: color 0.2s;
+        }
+        .about-projects a:hover {
+            color: var(--primary);
+        }
+        .services {
+            background: var(--bgDark);
+            border-radius: 16px;
+            box-shadow: 0 4px 32px #0001;
+            margin: 2rem 0;
+            padding-bottom: 3rem;
+        }
+        .services-head {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 2.5rem; /* Increased space below the heading */
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding-top: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 0 2px 8px #1dddbd22;
+        }
+        .services-head + p {
+            color: var(--white);
+            font-family: 'Lato', sans-serif;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            font-weight: 400;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.5rem;
+        }
+        .card {
+            background: var(--white);
+            padding: 3.5rem 2rem 2.5rem 2rem;
+            position: relative;
+            text-align: center;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px #1dddbd22;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            border: 1.5px solid #e0e0e0;
+        }
+        .card img {
+            width: 90px;
+            height: 90px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: -2.8rem;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 16px #0002;
+            border: 3px solid var(--primary);
+            padding: 0.5rem;
+            object-fit: contain;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover img {
+            transform: translateX(-50%) scale(1.08) rotate(-6deg);
+            box-shadow: 0 8px 32px #1dddbd44;
+        }
+        .card h2 {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 0.7rem;
+            color: var(--primary);
+            margin-top: 2.7rem;
+            letter-spacing: 1px;
+        }
+        .card p {
+            font-family: 'Lato', sans-serif;
+            color: var(--secondary);
+            line-height: 1.7;
+            font-size: 1.08rem;
+        }
+        .card:hover {
+            background: linear-gradient(135deg, var(--primary) 80%, var(--accent) 100%);
+            transform: translateY(-10px) scale(1.04);
+            box-shadow: 0 12px 40px #1dddbd55;
+            border-color: var(--primary);
+        }
+        .card:hover h2,
+        .card:hover p {
+            color: var(--white);
+        }
+        .section-title {
+            color: var(--primary);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        .section-desc {
+            color: var(--secondary);
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            font-family: 'Lato', sans-serif;
+        }
+        .blog-section {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 32px #0001;
+            margin: 2rem 0;
+            padding: 4rem 0;
+        }
+        .blog-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .blog-card {
+            background: var(--bgLight);
+            border-radius: 16px;
+            box-shadow: 0 2px 16px #1dddbd22;
+            padding: 2.2rem 1.7rem 2.7rem 1.7rem;
+            max-width: 370px;
+            flex: 1 1 320px;
+            transition: box-shadow 0.2s, transform 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        .blog-card:hover {
+            box-shadow: 0 8px 32px #1dddbd33;
+            transform: translateY(-6px) scale(1.03);
+            background: linear-gradient(135deg, var(--primary) 10%, var(--bgLight) 100%);
+        }
+        .blog-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.7rem;
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .blog-card p {
+            color: var(--secondary);
+            font-size: 1.05rem;
+            margin-bottom: 0.7rem;
+            min-height: 60px;
+        }
+        .blog-card .blog-more-content {
+            display: none;
+            color: #444;
+            font-size: 0.98rem;
+            margin-top: 0.7rem;
+            line-height: 1.7;
+            background: #fff;
+            border-radius: 10px;
+            padding: 1rem 0.7rem;
+            box-shadow: 0 2px 8px #1dddbd11;
+            animation: fadeInBlog 0.5s;
+        }
+        @keyframes fadeInBlog {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .blog-card .read-more-btn {
+            color: var(--accent);
+            text-decoration: underline;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            outline: none;
+            transition: color 0.2s;
+            margin-top: 0.5rem;
+            padding: 0;
+        }
+        .blog-card .read-more-btn:hover {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .contact-section {
+            background: var(--bgDark);
+            border-radius: 16px;
+            box-shadow: 0 4px 32px #0001;
+            margin: 2rem 0 3rem 0;
+            padding: 4rem 0 3rem 0;
+        }
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--white);
+            text-align: center;
+        }
+        .contact-content h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        .contact-content p {
+            color: #e0e0e0;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        .contact-socials {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 1.5rem;
+        }
+        .contact-socials a {
+            color: var(--primary);
+            font-size: 2.4rem;
+            background: #fff;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 12px #1dddbd22;
+            transition: color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s;
+            border: 2px solid transparent;
+            position: relative;
+            text-decoration: none;
+        }
+        .contact-socials a:hover {
+            color: #fff;
+            background: var(--primary);
+            transform: scale(1.13) rotate(-8deg);
+            box-shadow: 0 8px 32px #1dddbd44;
+            border-color: var(--accent);
+            z-index: 2;
+            text-decoration: none;
+        }
+        .contact-socials a[title="LinkedIn"] {
+            color: #0077b5;
+            background: #fff;
+            border: 2px solid #0077b5;
+        }
+        .contact-socials a[title="LinkedIn"]:hover {
+            background: #0077b5;
+            color: #fff;
+            border-color: var(--primary);
+        }
+        .contact-socials a[title="LinkedIn"]::after {
+            content: "View Profile";
+            position: absolute;
+            bottom: -2.2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #0077b5;
+            color: #fff;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 12px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+            white-space: nowrap;
+        }
+        .contact-socials a[title="LinkedIn"]:hover::after {
+            opacity: 1;
+        }
+        @media (max-width: 900px) {
+            nav {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .left {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .logo {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+            .nav-links {
+                gap: 1.2rem;
+            }
+            .hero, .about .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero .left img, .about .left img {
+                margin: 0 auto;
+            }
+        }
+        @media (max-width: 600px) {
+            .nav-links a {
+                font-size: 0.95rem;
+                padding: 0.4rem 0.7rem;
+            }
+            .hero .left img, .about .left img {
+                width: 90vw;
+                height: auto;
+            }
+            section {
+                padding: 2rem 0;
+            }
+            .logo img {
+                width: 60px;
+                height: 60px;
+            }
+            .card img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+    <!-- Font Awesome for contact icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // Open LinkedIn profile in a new tab and try to force public profile
+        document.addEventListener('DOMContentLoaded', function() {
+            // LinkedIn open in new tab
+            var linkedin = document.querySelector('.contact-socials a[title="LinkedIn"]');
+            if (linkedin) {
+                linkedin.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.open('https://www.linkedin.com/in/bhavana-kundella-chennakeshavulu-b849a72ba/?trk=public-profile-badge', '_blank');
+                });
+            }
+            // Blog Read More functionality
+            document.querySelectorAll('.blog-card').forEach(function(card) {
+                var btn = card.querySelector('.read-more-btn');
+                var more = card.querySelector('.blog-more-content');
+                if (btn && more) {
+                    btn.addEventListener('click', function() {
+                        if (more.style.display === 'block') {
+                            more.style.display = 'none';
+                            btn.textContent = 'Read More';
+                        } else {
+                            more.style.display = 'block';
+                            btn.textContent = 'Show Less';
+                        }
+                    });
+                }
+            });
+            // Download CV functionality
+            var downloadBtn = document.querySelector('.btn.btn-secondary');
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Replace 'BhavanaKC_Portfolio.pdf' with your actual CV file name and path
+                    window.open('BhavanaKC_Portfolio.pdf', '_blank');
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="left">
+                    <div class="logo">
+                        <img src="./images/LOGO.JPG" alt="logo">
+                    </div>
+                    <div class="nav-links">
+                        <a href="#home" class="active">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#services">Services</a>
+                        <a href="#blog">Blog</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="right">
+                    <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="container" id="home">
+        <div class="hero">
+            <div class="left flex-1 justify-center">
+                <img src="./images/photo.jpg" alt="Profile">
+            </div>
+            <div class="right flex-1">
+                <h6>BHAVANA K.C</h6>
+                <h1>I'm a Web<br> <span>Developer</span></h1>
+                <p>
+                    Hi! I'm a curious and creative problem solver with a passion for building digital experiences that are both thoughtful and impactful. Whether it's crafting intuitive user interfaces, bringing ideas to life through clean code, or diving into the details that make projects shine—I love what I do.
+                </p>
+            </div>
+        </div>
+    </div>
+    <section class="about" id="about">
+        <div class="container">
+            <div class="right flex-1">
+                <h1 class="section-title">About <span>Me</span></h1>
+                <p class="section-desc">
+                    I'm Bhavana K.C, a web developer with a keen eye for design and a drive for excellence. My journey in tech began with curiosity and has grown into a career focused on building purposeful, user-centric digital solutions. I believe in continuous learning, collaboration, and making a positive impact through technology.
+                </p>
+                <ul class="about-list">
+                    <li><strong>Experience:</strong> Created multi-page websites using HTML, CSS, and JavaScript for fictional businesses and personal portfolios.</li>
+                    <li><strong>Skills:</strong> HTML, CSS, JavaScript, React</li>
+                    <li><strong>Interests:</strong> Creative Thinking, design systems, accessibility, blogging</li>
+                </ul>
+                <div class="about-projects">
+                    <h3>Highlighted Projects</h3>
+                    <ul>
+                        <li>
+                            <strong>Personal Portfolio Website:</strong>
+                            A modern, responsive portfolio to showcase my skills, projects, and experience.
+                            <a href="https://github.com/Bhavana31740/portfolio" target="_blank">View on GitHub</a>
+                        </li>
+                        <li>
+                            <strong>Product Landing Page:</strong>
+                            "Experience timeless elegance with Bhavana Luxe Watches — where craftsmanship meets sophistication. Designed to reflect prestige, built to last a lifetime."
+                            <a href="https://github.com/Bhavana31740/SLASH.git" target="_blank">View on GitHub</a>
+                        </li>
+                        <li>
+                            <strong>Weather Dashboard:</strong>
+                            Real-time weather dashboard using OpenWeatherMap API and responsive charts.
+                            <a href="https://github.com/Bhavana31740/weather-dashboard" target="_blank">View on GitHub</a>
+                        </li>
+                    </ul>
+                    <span style="color:var(--primary);font-size:1rem;">I love building projects that solve real problems and help people.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="services" id="services">
+        <div class="container">
+            <h1 class="services-head section-title">Services</h1>
+            <p class="section-desc">All your digital needs... covered.</p>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="./images/GRAPHIC.png" alt="Graphic Design">
+                    <h2>Graphic Design</h2>
+                    <p>
+                        Design is where creativity meets communication. I specialize in crafting visually striking designs that not only look stunning but also tell a compelling story—whether it’s branding, social media graphics, or print materials.
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="./images/WEB.png" alt="Web Development">
+                    <h2>Web Development</h2>
+                    <p>
+                        Code is my canvas. I build dynamic, user-friendly websites and applications that blend functionality with clean, modern design—optimized for performance, scalability, and a seamless user experience.
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="./images/CW.png" alt="Content Writing">
+                    <h2>Content Writing</h2>
+                    <p>
+                        Words shape perception. I create persuasive, engaging, and SEO-friendly content tailored to resonate with your target audience—be it blogs, product descriptions, or brand storytelling.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="blog-section" id="blog">
+        <div class="container">
+            <h2 class="section-title">Blog</h2>
+            <p class="section-desc">Insights, tutorials, and stories from my journey in tech and design.</p>
+            <div class="blog-list">
+                <div class="blog-card">
+                    <h3>5 Tips for Better Web Design</h3>
+                    <p>Discover practical advice to make your websites more user-friendly, accessible, and visually appealing.</p>
+                    <button class="read-more-btn">Read More</button>
+                    <div class="blog-more-content">
+                        <ul style="padding-left:1.2rem;">
+                            <li><b>1. Prioritize Simplicity:</b> Clean layouts help users focus on your content. Avoid clutter and use whitespace effectively.</li>
+                            <li><b>2. Responsive Design:</b> Ensure your site looks great on all devices by using flexible grids and media queries.</li>
+                            <li><b>3. Consistent Branding:</b> Use a harmonious color palette and consistent typography to reinforce your brand identity.</li>
+                            <li><b>4. Accessibility Matters:</b> Use semantic HTML, proper contrast, and alt text for images to make your site usable for everyone.</li>
+                            <li><b>5. Fast Load Times:</b> Optimize images and minimize scripts to keep your website speedy and user-friendly.</li>
+                        </ul>
+                        <p style="margin-top:1rem;">By following these tips, you’ll create web experiences that are both beautiful and effective.</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <h3>Getting Started with React</h3>
+                    <p>A beginner-friendly guide to building interactive user interfaces with React.js.</p>
+                    <button class="read-more-btn">Read More</button>
+                    <div class="blog-more-content">
+                        <p>
+                            React is a powerful JavaScript library for building user interfaces. Here’s how to get started:
+                        </p>
+                        <ol style="padding-left:1.2rem;">
+                            <li><b>Install Node.js & npm:</b> These are required to manage React projects.</li>
+                            <li><b>Create a React App:</b> Use <code>npx create-react-app my-app</code> to scaffold a new project.</li>
+                            <li><b>Understand Components:</b> Break your UI into reusable components for better maintainability.</li>
+                            <li><b>JSX Syntax:</b> Write HTML-like code in JavaScript for easier UI development.</li>
+                            <li><b>State & Props:</b> Manage dynamic data and pass information between components.</li>
+                        </ol>
+                        <p style="margin-top:1rem;">React’s component-based approach makes it easy to build scalable and interactive web applications.</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <h3>Why Content Matters</h3>
+                    <p>Explore the importance of quality content in digital marketing and how it drives engagement.</p>
+                    <button class="read-more-btn">Read More</button>
+                    <div class="blog-more-content">
+                        <p>
+                            Content is the backbone of any successful digital strategy. Here’s why it matters:
+                        </p>
+                        <ul style="padding-left:1.2rem;">
+                            <li><b>Builds Trust:</b> Well-written content establishes your authority and credibility.</li>
+                            <li><b>Drives SEO:</b> Quality content helps your website rank higher in search engines.</li>
+                            <li><b>Engages Visitors:</b> Informative and engaging content keeps users on your site longer.</li>
+                            <li><b>Converts Leads:</b> Persuasive copy guides visitors toward taking action.</li>
+                        </ul>
+                        <p style="margin-top:1rem;">Investing in content creation is investing in the long-term success of your brand.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Contact</h2>
+                <p>
+                    Interested in working together or have a question? Let's connect! Reach out via email or find me on social media.
+                </p>
+                <div class="contact-socials">
+                    <a href="mailto:bhavanak.c2005@Gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/Bhavana31740" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/bhavana-kundella-chennakeshavulu-b849a72ba/?trk=public-profile-badge" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
